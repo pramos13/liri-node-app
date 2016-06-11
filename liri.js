@@ -50,8 +50,10 @@ function myTweets() {
         if (error) throw error;
         for (var i = 0; i < data.length; i++) {
 
-            var tweetResults = data[i].text + "\n"; 
-            console.log(tweetResults);
+            var tweetResults = data[i].text + "\n";
+            console.log(" " + " " + "My last 20 Tweets" + " " + " ")
+              console.log("------------------------------------------"); 
+                console.log(tweetResults);
 
         };
     });
@@ -67,6 +69,8 @@ function spotifyIt() {
             return; 
         } else {
             var songInfo = data.tracks.items[0];
+            console.log(" " + " " + "Spotify Results" + " " + " ")
+              console.log("------------------------------------------");
             console.log("artist name", songInfo.artists[0].name);
             console.log("song name", songInfo.name);
             console.log("album name", songInfo.album.name);
@@ -82,6 +86,8 @@ spotifyIt();
 function findMovie() {
   request("http://www.omdbapi.com/?t=" + params[1] + "&y=&plot=short&r=json", function(error, response, body){
     var movieObject = JSON.parse(body);
+    console.log(" " + " " + "Movie Results" + " " + " ")
+        console.log("------------------------------------------");
     console.log("the title is", movieObject.Title);
     console.log("the year is", movieObject.Year);
     console.log("the IMDB Rating is", movieObject.imdbRating);
